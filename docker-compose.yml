@@ -1,0 +1,71 @@
+version: '3'
+
+volumes:
+  data:
+  db:
+  cache:
+  onlyoffice:
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    container_name: nextcloud-stack-db
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=hzGM2w^tD3sJZtAz&HWP
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      
+  redis:
+    image: redis
+    restart: always
+    container_name: nextcloud-stack-redis
+    volumes:
+      - cache:/usr/local/etc/redis
+
+  onlyoffice:
+    image: onlyoffice/documentserver
+    restart: always
+    container_name: nextcloud-stack-office
+    ports:
+      - 8082:80
+      - 8083:443
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+    volumes:
+      - onlyoffice:/var/log/onlyoffice
+      - onlyoffice:/var/www/onlyoffice/Data
+     
+  
+  nextcloud:
+    image: nextcloud:latest
+    restart: always
+    container_name: nextcloud-stack-app
+    ports:
+      - 8080:80
+      - 8081:443
+    depends_on:
+      - db
+      - redis
+      - onlyoffice
+    volumes:
+      - data:/var/www/html
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_HOST=nextcloud-stack-db
+      - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
+      - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
+      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAIN}
+      - REDIS_HOST=nextcloud-stack-redis
+      - PHP_MEMORY_LIMIT=1024M
+      - PHP_UPLOAD_LIMIT=1024M
+
+    
+
+
