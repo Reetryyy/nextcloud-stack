@@ -3,10 +3,11 @@
 # Function to Install the Nextcloud container
 install_nextcloud_container() {
     docker compose up -d
+
     # Add the cronjob to run every 5 minutes
-    sudo crontab -e
-    echo "*/5 * * * * docker exec -u www-data nextcloud-stack-web php -f /var/www/html/cron.php" | sudo crontab -
+    (sudo crontab -l ; echo "*/5 * * * * docker exec -u www-data nextcloud-stack-web php -f /var/www/html/cron.php") | sudo crontab -
 }
+
 
 # Function to start the Nextcloud container
 start_container() {
