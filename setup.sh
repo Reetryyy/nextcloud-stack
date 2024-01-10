@@ -6,27 +6,34 @@ install_nextcloud_container() {
 
     # Add the cronjob to run every 5 minutes
     (sudo crontab -l ; echo "*/5 * * * * docker exec -u www-data nextcloud-stack-web php -f /var/www/html/cron.php") | sudo crontab -
+    # Fix Onlyoffice volume permission
+    onlyoffice_volume_path=$(sudo docker volume inspect nextcloud-stack_onlyoffice --format '{{.Mountpoint}}')
+    chmod u+w "$onlyoffice_volume_path"
 }
 
 
 # Function to start the Nextcloud container
 start_container() {
     sudo docker compose start
+    sudo docker ps | grep nextcloud-stack
 }
 
 # Function to stop the Nextcloud container
 stop_container() {
     sudo docker compose stop
+    sudo docker ps | grep nextcloud-stack
 }
 
 # Function to restart the Nextcloud container
 restart_container() {
     docker compose restart
+    sudo docker ps | grep nextcloud-stack
 }
 
 remove_container() {
     docker compose stop
-    docker compose rm
+    docker compose rm --force
+    sudo docker ps | grep nextcloud-stack
 }
 
 
