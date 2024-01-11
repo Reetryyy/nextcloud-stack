@@ -39,8 +39,11 @@ services:
     volumes:
       - onlyoffice:/var/log/onlyoffice
       - onlyoffice:/var/www/onlyoffice/Data
-     
-  
+      - onlyoffice:/var/lib/rabbitmq
+      - onlyoffice:/var/lib/redis
+      - onlyoffice:/usr/share/fonts/truetype/custom
+      - onlyoffice:/var/lib/onlyoffice
+      - onlyoffice:/var/lib/postgresql
   nextcloud:
     image: nextcloud:latest
     restart: always
@@ -61,10 +64,14 @@ services:
       - MYSQL_HOST=nextcloud-stack-db
       - NEXTCLOUD_ADMIN_USER=${NEXTCLOUD_ADMIN_USER}
       - NEXTCLOUD_ADMIN_PASSWORD=${NEXTCLOUD_ADMIN_PASSWORD}
-      - NEXTCLOUD_TRUSTED_DOMAINS=${NEXTCLOUD_TRUSTED_DOMAIN}
+      - NEXTCLOUD_TRUSTED_DOMAINS=${DOMAIN}
       - REDIS_HOST=nextcloud-stack-redis
       - PHP_MEMORY_LIMIT=1024M
       - PHP_UPLOAD_LIMIT=1024M
+      - OVERWRITEPROTOCOL=https
+      - OVERWRITECLIURL=https://${DOMAIN}/
+      - OVERWRITEWEBROOT=/
+      
 
     
 

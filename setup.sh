@@ -2,48 +2,17 @@
 
 # Function to Install the Nextcloud container
 install_nextcloud_container() {
-    docker compose up -d
-
-    # Add the cronjob to run every 5 minutes
-    (sudo crontab -l ; echo "*/5 * * * * docker exec -u www-data nextcloud-stack-app php -f /var/www/html/cron.php") | sudo crontab -
-    # Fix Onlyoffice volume permission
-    onlyoffice_volume_path=$(sudo docker volume inspect nextcloud-stack_onlyoffice --format '{{.Mountpoint}}')
-    chmod u+w "$onlyoffice_volume_path"
-    # Install Apps
-    sleep 5
-    docker exec -u www-data nextcloud-stack-app php occ app:install -f onlyoffice
-    docker exec -u www-data nextcloud-stack-app php occ app:enable onlyoffice
-
-    # Nextcloud volume path
-    nextcloud_volume_path=$(sudo docker volume inspect nextcloud-stack_data --format '{{.Mountpoint}}')
-
-    # Source the .env file to load variables
-    source .env
-
-    # Get the Nextcloud configuration file path
-    nextcloud_config_file="${nextcloud_volume_path}/config/config.php"
-
-    # Check if the configuration file exists
-    if [[ ! -f "${nextcloud_config_file}" ]]; then
-    echo "Error: Nextcloud configuration file not found at ${nextcloud_config_file}"
-    exit 1
-    fi
-
-    # Construct the config content to append
-    config_content="<?php\n"
-    config_content+="'overwrite.cli.url' => '${NEXTCLOUD_TRUSTED_DOMAIN}',\n"
-    config_content+="'overwriteprotocol' => 'https',\n"
-    config_content+="'overwritewebroot' => '/',\n"
-    config_content+="'onlyoffice' => array (\n"
-    config_content+="  'DocumentServerUrl' => '${NEXTCLOUD_TRUSTED_DOMAIN}',\n"
-    config_content+="  'jwt_secret' => '${JWT_SECRET}',\n"
-    config_content+="),\n"
-    config_content+="?>"
-
-    # Append the config content to the Nextcloud configuration file, ensuring proper PHP syntax
-    sudo tee -a "${nextcloud_config_file}" <<< "$config_content"
-}
-
+  docker compose up -d
+  # Add the cronjob to run every 5 minutes
+  (sudo crontab -l ; echo "*/5 * * * * docker exec -u www-data nextcloud-stack-app php -f /var/www/html/cron.php") | sudo crontab -
+  # Fix Onlyoffice volume permission
+  sleep 10
+  onlyoffice_volume_path=$(sudo docker volume inspect nextcloud-stack_onlyoffice --format '{{.Mountpoint}}')
+  chmod u+w "$onlyoffice_volume_path"
+  # Install Apps
+  sleep 15
+  docker exec -u www-data nextcloud-stack-app php occ app:install -f onlyoffice
+  docker exec -u www-data nextcloud-stack-app php occ app:enable onlyoffice
 
 # Function to start the Nextcloud container
 start_container() {
