@@ -10,7 +10,7 @@ install_nextcloud_container() {
   onlyoffice_volume_path=$(sudo docker volume inspect nextcloud-stack_onlyoffice --format '{{.Mountpoint}}')
   chmod u+w "$onlyoffice_volume_path"
   # Install Apps
-  sleep 15
+  sleep 30
   docker exec -u www-data nextcloud-stack-app php occ app:install -f onlyoffice
   docker exec -u www-data nextcloud-stack-app php occ app:enable onlyoffice
 }
