@@ -26,6 +26,7 @@ services:
     container_name: nextcloud-stack-redis
     volumes:
       - cache:/usr/local/etc/redis
+      - cache:/data
 
   onlyoffice:
     image: onlyoffice/documentserver
@@ -71,7 +72,7 @@ services:
       - OVERWRITEPROTOCOL=https
       - OVERWRITECLIURL=https://${DOMAIN}/
       - OVERWRITEWEBROOT=/
-      
+
 
     
 
