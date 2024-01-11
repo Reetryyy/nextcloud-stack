@@ -13,7 +13,7 @@ install_nextcloud_container() {
   sleep 15
   docker exec -u www-data nextcloud-stack-app php occ app:install -f onlyoffice
   docker exec -u www-data nextcloud-stack-app php occ app:enable onlyoffice
-
+}
 # Function to start the Nextcloud container
 start_container() {
     sudo docker compose start
