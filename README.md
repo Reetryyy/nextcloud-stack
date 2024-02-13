@@ -1,9 +1,9 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://static-00.iconduck.com/assets.00/nextcloud-icon-512x512-quluhp24.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">Nextcloud Stack</h3>
 
 <div align="center">
 
@@ -16,8 +16,8 @@
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
+<p align="center"> This project combines most popular and usefull integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV and etc.
+    <br>
 </p>
 
 ## 📝 Table of Contents
@@ -25,16 +25,10 @@
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+I'm putting together this project as I go, currently you will see softwares in this repo, which I needed to setup, in feature I might add few more, adjust instalaltion process and so on.  
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -103,12 +97,8 @@ Add additional notes about how to deploy this on a live system.
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@reetryyy](https://github.com/reetryyy) - Idea & Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/Reetryyy/Nextcloud-stack/graphs/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
