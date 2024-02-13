@@ -1,11 +1,3 @@
-
-
-volumes:
-  data:
-  db:
-  cache:
-  onlyoffice:
-
 services:
   db:
     image: mariadb
