@@ -16,7 +16,7 @@
 
 ---
 
-<p align="center"> This project combines most popular and usefull integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV and etc.
+<p align="center"> This project combines the most popular and useful integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV etc.
     <br>
 </p>
 
@@ -28,7 +28,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-I'm putting together this project as I go, currently you will see softwares in this repo, which I needed to setup, in feature I might add few more, adjust instalaltion process and so on.  
+I'm putting together this project as I go, currently, you will see the software in this repo, which I needed to set up, in a feature I might add few more, adjust the installation process, and so on.  
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -36,7 +36,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+- Ubuntu 22.04 LTS
+- Docker and Docker compose
+
 
 ```
 Give examples
