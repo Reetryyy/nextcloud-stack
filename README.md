@@ -92,7 +92,7 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [Docker](https://www.docker.com/) - Docker Engien
+- [Docker](https://www.docker.com/) - Docker Engine
 - [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Unix shell
 - [Nextcloud](https://nextcloud.com/) - Open-source CMS
 - [Onlyoffice](https://www.onlyoffice.com/) - Open-source online document editing server
