@@ -1,0 +1,24 @@
+{
+	auto_https disable_redirects
+	log {
+		level ERROR
+	}
+}
+
+kai.utmino.site {
+	# Talk
+	route /standalone-signaling/* {
+		uri strip_prefix /standalone-signaling
+		reverse_proxy hpb_talk:8081
+	}
+	route /recording/* {
+		uri strip_prefix /recording
+		reverse_proxy hpb_recording:1234
+	}
+	# TLS options
+	tls {
+		issuer acme {
+			disable_http_challenge
+		}
+	}
+}

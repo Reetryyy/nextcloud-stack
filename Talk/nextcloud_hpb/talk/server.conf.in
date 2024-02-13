@@ -1,0 +1,29 @@
+[http]
+listen = 0.0.0.0:8081
+
+[app]
+debug = false
+
+[sessions]
+hashkey = 
+blockkey = 
+
+[clients]
+internalsecret = 
+
+[backend]
+backends = backend-1
+allowall = false
+timeout = 10
+connectionsperhost = 8
+
+[backend-1]
+url = 
+secret = 
+
+[nats]
+url = nats://127.0.0.1:4222
+
+[mcu]
+type = janus
+url = ws://127.0.0.1:8188
