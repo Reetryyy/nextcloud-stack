@@ -9,14 +9,14 @@
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Reetryyy/Nextcloud-stack/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Reetryyy/Nextcloud-stack/pulls))
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Reetryyy/Nextcloud-stack/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> This project combines the most popular and useful integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV etc.
+<p align="center"> This project combines the most popular and useful integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV, etc.
     <br>
 </p>
 
