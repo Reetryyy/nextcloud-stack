@@ -8,7 +8,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://github.com/Reetryyy/Nextcloud-stack/issues)
+[![GitHub Issues](https://img.shields.io/github/issues/detail/state/:user/https%3A%2F%2Fgithub.com%2FReetryyy%2FNextcloud-stack/:number
+)](https://github.com/Reetryyy/Nextcloud-stack/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Reetryyy/Nextcloud-stack/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
