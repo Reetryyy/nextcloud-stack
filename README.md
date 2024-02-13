@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://static-00.iconduck.com/assets.00/nextcloud-icon-512x512-quluhp24.png" alt="Project logo"></a>
 </p>
 
-<h1 align="center">Nextcloud Stack</h1>
+<h1 align="center">#Nextcloud Stack</h1>
 
 <div align="center">
 
