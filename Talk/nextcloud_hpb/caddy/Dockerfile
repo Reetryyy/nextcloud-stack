@@ -1,8 +1,5 @@
 FROM caddy:2.7.6
 
-# Install curl
-RUN apk add --no-cache curl
-
 # Coppy files
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --chmod=775 healthcheck.sh /healthcheck.sh

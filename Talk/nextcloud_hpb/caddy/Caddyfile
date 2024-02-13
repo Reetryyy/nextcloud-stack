@@ -5,12 +5,13 @@
 	}
 }
 
-kai.utmino.site {
-	# Talk
+your.domain.com {
+	# Talk 
 	route /standalone-signaling/* {
 		uri strip_prefix /standalone-signaling
 		reverse_proxy hpb_talk:8081
 	}
+	# Recording
 	route /recording/* {
 		uri strip_prefix /recording
 		reverse_proxy hpb_recording:1234
