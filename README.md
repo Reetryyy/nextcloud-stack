@@ -6,6 +6,7 @@
 <h1 align="center" style="font-weight: bold;">Nextcloud Stack</h1>
 
 
+
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
