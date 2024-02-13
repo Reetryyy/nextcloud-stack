@@ -92,10 +92,12 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Docker](https://www.docker.com/) - Docker Engien
+- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Unix shell
+- [Nextcloud](https://nextcloud.com/) - Open-source CMS
+- [Onlyoffice](https://www.onlyoffice.com/) - Open-source online document editing server
+- [Nextcloud HPB](https://github.com/strukturag/nextcloud-spreed-signaling) - Nextcloud High-Performance & Recording backend
+- 
 
 ## ✍️ Authors <a name = "authors"></a>
 
