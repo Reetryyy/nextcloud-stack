@@ -64,7 +64,11 @@ services:
       - OVERWRITEPROTOCOL=https
       - OVERWRITECLIURL=https://${DOMAIN}/
       - OVERWRITEWEBROOT=/
-
+volumes:
+  db:
+  cache:
+  onlyoffice:
+  data:
 
     
 
