@@ -3,20 +3,18 @@
  <img width=200px height=200px src="https://static-00.iconduck.com/assets.00/nextcloud-icon-512x512-quluhp24.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Nextcloud Stack</h3>
+<h1 align="center"><strong>Nextcloud Stack</strong></h1>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
+[![GitHub Issues](https://img.shields.io/github/issues/reetryyy/Nextcloud-stack)](https://github.com/Reetryyy/Nextcloud-stack/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Reetryyy/Nextcloud-stack/pulls)
 </div>
 
 ---
 
-<p align="center"> This project combines most popular and usefull integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV and etc.
+<p align="center"> This project combines the most popular and useful integrations, like - Onlyoffice, Collabora-code, High-performance backend, ClamAV, etc.
     <br>
 </p>
 
@@ -28,7 +26,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-I'm putting together this project as I go, currently you will see softwares in this repo, which I needed to setup, in feature I might add few more, adjust instalaltion process and so on.  
+I'm putting together this project as I go, currently, you will see the software in this repo, which I needed to set up, in a feature I might add few more, adjust the installation process, and so on.  
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -36,20 +34,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+- Ubuntu 22.04 LTS
+- Docker and Docker compose Check this [guide](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+- Clone this repo.
 
 ```
-Give examples
+git clone https://github.com/Reetryyy/Nextcloud-stack.git
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running.
+A step-by-step series of examples that tell you how to get a development environment running.
 
-Say what the step will be
+cd to working directory
 
 ```
-Give the example
+cd Nextcloud-stack/
 ```
 
 And repeat
@@ -64,7 +64,7 @@ End with an example of getting some data out of the system or using it for a lit
 
 Explain how to run the automated tests for this system.
 
-### Break down into end to end tests
+### Break down into end-to-end tests
 
 Explain what these tests test and why
 
@@ -90,10 +90,12 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Docker](https://www.docker.com/) - Docker Engine
+- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) - Unix shell
+- [Nextcloud](https://nextcloud.com/) - Open-source CMS
+- [Onlyoffice](https://www.onlyoffice.com/) - Open-source online document editing server
+- [Nextcloud HPB](https://github.com/strukturag/nextcloud-spreed-signaling) - Nextcloud High-Performance & Recording backend
+- 
 
 ## ✍️ Authors <a name = "authors"></a>
 
