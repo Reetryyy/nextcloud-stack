@@ -23,8 +23,10 @@ fi
 
 set -x
 IPv4_ADDRESS_TALK_RELAY="$(hostname -i | grep -oP '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -1)"
-IPv4_ADDRESS_TALK="$(dig nextcloud-talk IN A +short +search | grep '^[0-9.]\+$' | sort | head -n1)"
-IPv6_ADDRESS_TALK="$(dig nextcloud-talk AAAA +short +search | grep '^[0-9a-f:]\+$' | sort | head -n1)"
+# shellcheck disable=SC2153
+IPv4_ADDRESS_TALK="$(dig "$TALK_HOST" IN A +short +search | grep '^[0-9.]\+$' | sort | head -n1)"
+# shellcheck disable=SC2153
+IPv6_ADDRESS_TALK="$(dig "$TALK_HOST" AAAA +short +search | grep '^[0-9a-f:]\+$' | sort | head -n1)"
 set +x
 
 if [ -n "$IPv4_ADDRESS_TALK" ] && [ "$IPv4_ADDRESS_TALK_RELAY" = "$IPv4_ADDRESS_TALK" ]; then
@@ -59,6 +61,14 @@ TURN_CONF
 # Remove empty lines so that the config is not invalid
 sed -i '/""/d' /conf/eturnal.yml
 
+if [ -z "$TALK_MAX_STREAM_BITRATE" ]; then
+    TALK_MAX_STREAM_BITRATE=1048576
+fi
+
+if [ -z "$TALK_MAX_SCREEN_BITRATE" ]; then
+    TALK_MAX_SCREEN_BITRATE=2097152
+fi
+
 # Signling
 cat << SIGNALING_CONF > "/conf/signaling.conf"
 [http]
@@ -83,6 +93,8 @@ connectionsperhost = 8
 [backend-1]
 url = https://${NC_DOMAIN}
 secret = ${SIGNALING_SECRET}
+maxstreambitrate = ${TALK_MAX_STREAM_BITRATE}
+maxscreenbitrate = ${TALK_MAX_SCREEN_BITRATE}
 
 [nats]
 url = nats://127.0.0.1:4222
@@ -90,6 +102,8 @@ url = nats://127.0.0.1:4222
 [mcu]
 type = janus
 url = ws://127.0.0.1:8188
+maxstreambitrate = ${TALK_MAX_STREAM_BITRATE}
+maxscreenbitrate = ${TALK_MAX_SCREEN_BITRATE}
 SIGNALING_CONF
 
 exec "$@"
