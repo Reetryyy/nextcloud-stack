@@ -19,7 +19,7 @@ fi
 cat << RECORDING_CONF > "/conf/recording.conf"
 [logs]
 # 30 means Warning
-level = 10
+level = 30
 
 [http]
 listen = 0.0.0.0:1234
