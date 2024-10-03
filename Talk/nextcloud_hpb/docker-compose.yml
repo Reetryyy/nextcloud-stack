@@ -40,7 +40,7 @@ services:
       - 3478:3478/tcp
       - 3478:3478/udp
     expose:
-      - "8081"
+      - "8080"
     environment:
       - NC_DOMAIN=${NC_DOMAIN}
       - TURN_SECRET=${TURN_SECRET}
