@@ -7,7 +7,7 @@ services:
       args:
         - TAG_NAME=hpb_proxy
     image: hpb_proxy
-    container_name: hpb_proxy
+    container_name: nextcloud_hpb_proxy
     depends_on:
       nextcloud-talk:
         condition: service_started
@@ -39,8 +39,9 @@ services:
     ports:
       - 3478:3478/tcp
       - 3478:3478/udp
+      # - 8081:8081 # Uncomment if you use a different Revers Proxy installed on the host directly like NGINX.
     expose:
-      - "8080"
+      - "8081"
     environment:
       - NC_DOMAIN=${NC_DOMAIN}
       - TURN_SECRET=${TURN_SECRET}
@@ -67,10 +68,12 @@ services:
       args:
         - TAG_NAME=hpb_recording
     image: hpb_recording
-    container_name: hpb_recording
+    container_name: nextcloud_hpb_recording
     init: true
     expose:
       - "1234"
+    #ports:
+    # - 1234:1234 # Uncomment if you use a different Revers Proxy installed on the host directly like NGINX.
     environment:
       - NC_DOMAIN=${NC_DOMAIN}
       - TZ=${TZ}
