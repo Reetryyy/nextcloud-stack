@@ -1,13 +1,12 @@
 services:
-
-# Nextcloud Caddy
+ # Nextcloud Caddy
   nextcloud-caddy:
     build:
       context: ./caddy
       args:
         - TAG_NAME=hpb_proxy
     image: hpb_proxy
-    container_name: nextcloud_hpb_proxy
+    container_name: nextcloud-stack-cady
     depends_on:
       nextcloud-talk:
         condition: service_started
@@ -27,14 +26,14 @@ services:
     volumes:
       - $PWD/caddy/Caddyfile:/etc/caddy/Caddyfile
 
-# Nextcloud talk
+  # Nextcloud talk
   nextcloud-talk:
     build:
       context: ./talk
       args:
         - TAG_NAME=hpb_talk
     image: hpb_talk
-    container_name: hpb_talk
+    container_name: nextcloud-stack-talk
     init: true
     ports:
       - 3478:3478/tcp
@@ -61,14 +60,14 @@ services:
       - /conf
       - /tmp
 
-# Nextcloud recording
+  # Nextcloud recording
   nextcloud-recording:
     build:
       context: ./recording
       args:
         - TAG_NAME=hpb_recording
     image: hpb_recording
-    container_name: nextcloud_hpb_recording
+    container_name: nextcloud-stack-recording
     init: true
     expose:
       - "1234"
@@ -87,6 +86,7 @@ services:
     tmpfs:
       - /tmp
       - /conf
+
 networks:
   hpb_network:
     name: hpb_network
